@@ -18,7 +18,7 @@
 
 ## Requirements
 
-- iOS 17+
+- iOS 17+ / macOS 14+ / tvOS 17+ / watchOS 10+ / visionOS 1+
 - Swift 6+
 - Alamofire 5.11+
 
@@ -62,7 +62,7 @@ Task {
 
 ```swift
 Task {
-    await AlamofireNetworkLogger.shared.level = .info
+    await AlamofireNetworkLogger.shared.setLevel(.info)
 }
 ```
 
@@ -71,7 +71,6 @@ Task {
 | `.debug` | cURL command, headers, status code, body, timing    |
 | `.info`  | HTTP method, URL, status code, timing               |
 | `.off`   | Nothing (logging disabled)                          |
-| `.fatal` | Nothing (equivalent to `.off`)                      |
 
 ### Filter Requests
 
@@ -79,10 +78,10 @@ Use an `NSPredicate` to suppress specific requests from appearing in the logs:
 
 ```swift
 Task {
-    await AlamofireNetworkLogger.shared.filterPredicate = NSPredicate { request, _ in
+    await AlamofireNetworkLogger.shared.setFilterPredicate(NSPredicate { request, _ in
         guard let url = (request as? URLRequest)?.url else { return false }
         return url.absoluteString.contains("analytics")
-    }
+    })
 }
 ```
 

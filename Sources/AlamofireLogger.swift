@@ -11,10 +11,9 @@ public enum LoggerLevel: Sendable {
     case off
     case debug  // Logs cURL, Headers, and Body (Success & Error)
     case info   // Logs Method, URL, and Status Code
-    case fatal  // Equivalent to .off
 
     var isLoggingEnabled: Bool {
-        self != .off && self != .fatal
+        self != .off
     }
 }
 

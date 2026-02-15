@@ -4,7 +4,11 @@ import PackageDescription
 let package = Package(
     name: "AlamofireNetworkActivityLogger",
     platforms: [
-        .iOS(.v17)
+        .iOS(.v17),
+        .macOS(.v14),
+        .tvOS(.v17),
+        .watchOS(.v10),
+        .visionOS(.v1)
     ],
     products: [
         .library(
@@ -13,14 +17,12 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/SwiftyBeaver/SwiftyBeaver", from: "2.1.1"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.11.1")
     ],
     targets: [
         .target(
             name: "AlamofireNetworkActivityLogger",
             dependencies: [
-                .product(name: "SwiftyBeaver", package: "SwiftyBeaver"),
                 .product(name: "Alamofire", package: "Alamofire")
             ],
             resources: [
