@@ -2,6 +2,11 @@
 
 **AlamofireNetworkActivityLogger** is a Swift logging library for [Alamofire 5+](https://github.com/Alamofire/Alamofire) that captures and prints detailed network activity — including cURL commands, headers, response bodies, and timing — using a modern, race-condition-free `actor`-based design backed by Swift Concurrency.
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Faporat%2FAlamofireNetworkActivityLogger%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/aporat/AlamofireNetworkActivityLogger)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Faporat%2FAlamofireNetworkActivityLogger%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/aporat/AlamofireNetworkActivityLogger)
+![GitHub Actions Workflow Status](https://github.com/aporat/AlamofireNetworkActivityLogger/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/github/aporat/AlamofireNetworkActivityLogger/graph/badge.svg?token=OHF9AE0KMC)](https://codecov.io/github/aporat/AlamofireNetworkActivityLogger)
+
 ## Features
 
 - **Structured log levels**: Choose between `.debug`, `.info`, and `.off` to control verbosity.
