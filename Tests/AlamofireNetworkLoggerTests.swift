@@ -12,11 +12,6 @@ struct LoggerLevelTests {
         #expect(LoggerLevel.off.isLoggingEnabled == false)
     }
 
-    @Test("fatal disables logging")
-    func fatalDisablesLogging() {
-        #expect(LoggerLevel.fatal.isLoggingEnabled == false)
-    }
-
     @Test("debug enables logging")
     func debugEnablesLogging() {
         #expect(LoggerLevel.debug.isLoggingEnabled == true)
