@@ -175,11 +175,7 @@ public actor AlamofireNetworkLogger {
     }
 
     private func prettyPrint(_ data: Data) {
-        if let json = try? JSONSerialization.jsonObject(with: data, options: []),
-           let pretty = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted, .sortedKeys]),
-           let str = String(data: pretty, encoding: .utf8) {
-            print(str)
-        } else if let str = String(data: data, encoding: .utf8) {
+        if let str = String(data: data, encoding: .utf8) {
             print(str)
         } else {
             print("Binary data (\(data.count) bytes)")
